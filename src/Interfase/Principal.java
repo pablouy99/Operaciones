@@ -9,8 +9,12 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GraphicsDevice;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import operaciones.Operaciones;
+import operaciones.clsFuncionario;
 
 /**
  *
@@ -22,6 +26,9 @@ public class Principal extends javax.swing.JFrame {
     private JPanelPresencia presencia;
     private iBuscar iBusca;
     private iBuscaChapa iBuscaChapa;
+    ArrayList func = new ArrayList();
+    public JTable table;
+    public DefaultTableModel model;
     
     /**
      * Creates new form Principal
@@ -63,7 +70,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenu11 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuPresenciaVesp = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
@@ -167,13 +174,13 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem4.setText("Matutino");
         jMenu11.add(jMenuItem4);
 
-        jMenuItem5.setText("Vespertino");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuPresenciaVesp.setText("Vespertino");
+        jMenuPresenciaVesp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jMenuPresenciaVespActionPerformed(evt);
             }
         });
-        jMenu11.add(jMenuItem5);
+        jMenu11.add(jMenuPresenciaVesp);
 
         jMenuItem8.setText("Nocturno");
         jMenu11.add(jMenuItem8);
@@ -332,14 +339,32 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem21ActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-            
+    private void jMenuPresenciaVespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPresenciaVespActionPerformed
+        int i=0;
+        Operaciones operac = new Operaciones();
+                
         this.presencia = new JPanelPresencia();
         this.add(presencia, BorderLayout.CENTER);
         pack();
-        presencia.setVisible(true);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+        func = operac.listarTurno(3);
+            String[] titulos = {"Chapa", "Nombre", "Apellido"}; 
+              model = new DefaultTableModel(null, titulos);
+              String[] fila = new String[3];
+              clsFuncionario claseFuncionario = new clsFuncionario();
+              for (i=0; i<func.size(); i++){
+              claseFuncionario = (clsFuncionario) func.get(i);
+              
+              fila[0] = Integer.toString(claseFuncionario.getChapa());
+              fila[1] = claseFuncionario.getNombre();
+              fila[2] = claseFuncionario.getApellido();
+                                        
+              model.addRow(fila);
+              }
+              presencia.setVisible(true);
+              presencia.jTablePresencia.setModel(model);
+                presencia.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuPresenciaVespActionPerformed
 
     /**
      * @param args the command line arguments
@@ -415,11 +440,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMenuPresenciaVesp;
     private javax.swing.JMenuItem jModifFunc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem modificarCliente;

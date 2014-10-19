@@ -144,4 +144,20 @@ public int normalizaSetTurno(int turno){
     return turno;
 }
 
+ public ArrayList listarTurno(int pTurno){
+     ArrayList resultado = new ArrayList();
+     ArrayList variosFunc = new ArrayList();
+     int i = 0;
+        resultado = func.listarTurno(pTurno);
+     for (i=0; i < resultado.size(); i=i+3){
+        clsFuncionario funcionarios = new clsFuncionario();
+               funcionarios.setChapa(Integer.parseInt(resultado.get(i).toString()));
+               funcionarios.setNombre(resultado.get(i+1).toString());
+               funcionarios.setApellido(resultado.get(i+2).toString());
+               variosFunc.add(funcionarios);
+     }
+    return variosFunc;
+ }
+ 
+
 }

@@ -104,5 +104,28 @@ public class pFuncionario extends clsPersistencia{
        
         return resultado;
     }
+    
+    public ArrayList listarTurno(int pTurno){
+        ArrayList userList = new ArrayList();
+          ResultSet rs;
+
+        try {
+            rs = selectQuery("select chapa, nombre, apellido from funcionario where turno=" + pTurno + ";");
+            
+            
+
+        while(rs.next()){
+            userList.add(rs.getString("chapa"));
+            userList.add(rs.getString("nombre"));
+            userList.add(rs.getString("apellido"));
+            
+       }
+       } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
+    
+    
+    }
  
 }

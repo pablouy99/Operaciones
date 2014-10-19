@@ -140,4 +140,10 @@ public class clsFuncionario {
         return funcionario.buscarFuncPorChapa(nroFun);
     }
     
+    public ArrayList listarTurno(int pTurno){
+    
+    return funcionario.listarTurno(pTurno);
+    
+    }
+    
 }
