@@ -6,11 +6,21 @@
 
 package Interfase;
 
+import java.awt.BorderLayout;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+import operaciones.Operaciones;
+import operaciones.clsFuncionario;
+
 /**
  *
  * @author Usuario
  */
 public class JPanelPresencia extends javax.swing.JPanel {
+    private DefaultTableModel model;
+    private Justificaciones justifica;
+    int turno=0;
 
     /**
      * Creates new form JPanelPresencia
@@ -40,6 +50,7 @@ public class JPanelPresencia extends javax.swing.JPanel {
         jComboTurnoPresencia = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jButtonGuardarPresencia = new javax.swing.JButton();
+        jButtonGuardarPresencia1 = new javax.swing.JButton();
 
         jTablePresencia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -53,8 +64,14 @@ public class JPanelPresencia extends javax.swing.JPanel {
             }
         ));
         jTablePresencia.setName(""); // NOI18N
+        jTablePresencia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablePresenciaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTablePresencia);
 
+        jFechaPesencia.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jFechaPesencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFechaPesenciaActionPerformed(evt);
@@ -85,6 +102,14 @@ public class JPanelPresencia extends javax.swing.JPanel {
         jButtonGuardarPresencia.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButtonGuardarPresencia.setText("Guardar");
 
+        jButtonGuardarPresencia1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonGuardarPresencia1.setText("No Presente");
+        jButtonGuardarPresencia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuardarPresencia1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,6 +119,8 @@ public class JPanelPresencia extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonGuardarPresencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(309, 309, 309)
@@ -130,7 +157,9 @@ public class JPanelPresencia extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
                 .addGap(11, 11, 11)
-                .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonGuardarPresencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -140,8 +169,52 @@ public class JPanelPresencia extends javax.swing.JPanel {
     }//GEN-LAST:event_jFechaPesenciaActionPerformed
 
     private void jComboTurnoPresenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboTurnoPresenciaActionPerformed
-        // TODO add your handling code here:
+           int i=0;
+           Operaciones operac = new Operaciones();
+           ArrayList func = new ArrayList();
+        
+         turno = jComboTurnoPresencia.getSelectedIndex();
+         
+        
+        
+        func = operac.listarTurno(operac.normalizaSetTurno(turno));
+            String[] titulos = {"Chapa", "Nombre", "Apellido"}; 
+              model = new DefaultTableModel(null, titulos){
+                  @Override
+                  public boolean isCellEditable(int row, int column) {
+                   //all cells false
+                  return false;
+                  }
+              };
+              String[] fila = new String[3];
+              clsFuncionario claseFuncionario = new clsFuncionario();
+              for (i=0; i<func.size(); i++){
+              claseFuncionario = (clsFuncionario) func.get(i);
+              
+              fila[0] = Integer.toString(claseFuncionario.getChapa());
+              fila[1] = claseFuncionario.getNombre();
+              fila[2] = claseFuncionario.getApellido();
+                                        
+              model.addRow(fila);
+              }
+             this.jTablePresencia.setModel(model);
+                
     }//GEN-LAST:event_jComboTurnoPresenciaActionPerformed
+
+    private void jTablePresenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePresenciaMouseClicked
+        // TODO add your handling code here:
+        
+        if (evt.getClickCount() == 2 && !evt.isConsumed()){
+            int fila = jTablePresencia.getSelectedRow();
+         model.removeRow(fila);
+         this.jTablePresencia.setModel(model);
+        }
+    }//GEN-LAST:event_jTablePresenciaMouseClicked
+
+    private void jButtonGuardarPresencia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarPresencia1ActionPerformed
+        justifica = new Justificaciones();
+        justifica.setVisible(true);
+    }//GEN-LAST:event_jButtonGuardarPresencia1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -149,8 +222,9 @@ public class JPanelPresencia extends javax.swing.JPanel {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton jButtonGuardarPresencia;
+    private javax.swing.JButton jButtonGuardarPresencia1;
     public javax.swing.JComboBox jComboTurnoPresencia;
-    private javax.swing.JFormattedTextField jFechaPesencia;
+    public javax.swing.JFormattedTextField jFechaPesencia;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelLibre2;

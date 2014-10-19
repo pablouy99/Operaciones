@@ -53,7 +53,7 @@ public class pFuncionario extends clsPersistencia{
           ResultSet rs;
 
         try {
-            rs = selectQuery("select numeroFunc, nombre, apellido, categoria.categoria, libre, chapa, turno from funcionario inner join categoria on categoria.idcategoria=funcionario.categoria where numeroFunc=" + nroFun + ";");
+            rs = selectQuery("SELECT numeroFunc, nombre, apellido, categoria.categoria, libre, chapa, turno FROM funcionario INNER JOIN categoria ON categoria.idcategoria=funcionario.categoria WHERE numeroFunc=" + nroFun + ";");
             //rs.first();
             
 
@@ -77,7 +77,7 @@ public class pFuncionario extends clsPersistencia{
           ResultSet rs;
 
         try {
-            rs = selectQuery("select numeroFunc, nombre, apellido, categoria, libre, chapa, turno, concesion from funcionario where chapa=" + nroFun + ";");
+            rs = selectQuery("SELECT numeroFunc, nombre, apellido, categoria, libre, chapa, turno, concesion FROM funcionario WHERE chapa=" + nroFun + ";");
             //rs.first();
             
 
@@ -110,7 +110,7 @@ public class pFuncionario extends clsPersistencia{
           ResultSet rs;
 
         try {
-            rs = selectQuery("select chapa, nombre, apellido from funcionario where turno=" + pTurno + ";");
+            rs = selectQuery("SELECT chapa, nombre, apellido FROM funcionario WHERE turno=" + pTurno + " ORDER BY chapa ASC;");
             
             
 

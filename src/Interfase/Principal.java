@@ -5,16 +5,13 @@
 package Interfase;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GraphicsDevice;
-import java.awt.Toolkit;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import javax.swing.JPanel;
+import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import operaciones.Operaciones;
-import operaciones.clsFuncionario;
+
 
 /**
  *
@@ -68,10 +65,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenu11 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuPresenciaVesp = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
@@ -169,23 +163,13 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu7.setText("Presencias");
 
-        jMenu11.setText("Nueva");
-
-        jMenuItem4.setText("Matutino");
-        jMenu11.add(jMenuItem4);
-
-        jMenuPresenciaVesp.setText("Vespertino");
+        jMenuPresenciaVesp.setText("Nueva");
         jMenuPresenciaVesp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuPresenciaVespActionPerformed(evt);
             }
         });
-        jMenu11.add(jMenuPresenciaVesp);
-
-        jMenuItem8.setText("Nocturno");
-        jMenu11.add(jMenuItem8);
-
-        jMenu7.add(jMenu11);
+        jMenu7.add(jMenuPresenciaVesp);
 
         jMenuItem12.setText("Modificar Datos");
         jMenu7.add(jMenuItem12);
@@ -340,29 +324,15 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem21ActionPerformed
 
     private void jMenuPresenciaVespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPresenciaVespActionPerformed
-        int i=0;
-        Operaciones operac = new Operaciones();
-                
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	   //get current date time with Date()
+	   Date date = new Date();        
+        
         this.presencia = new JPanelPresencia();
         this.add(presencia, BorderLayout.CENTER);
+        presencia.jFechaPesencia.setText(dateFormat.format(date));
         pack();
-        func = operac.listarTurno(3);
-            String[] titulos = {"Chapa", "Nombre", "Apellido"}; 
-              model = new DefaultTableModel(null, titulos);
-              String[] fila = new String[3];
-              clsFuncionario claseFuncionario = new clsFuncionario();
-              for (i=0; i<func.size(); i++){
-              claseFuncionario = (clsFuncionario) func.get(i);
-              
-              fila[0] = Integer.toString(claseFuncionario.getChapa());
-              fila[1] = claseFuncionario.getNombre();
-              fila[2] = claseFuncionario.getApellido();
-                                        
-              model.addRow(fila);
-              }
-              presencia.setVisible(true);
-              presencia.jTablePresencia.setModel(model);
-                presencia.setVisible(true);
+        presencia.setVisible(true);
         
     }//GEN-LAST:event_jMenuPresenciaVespActionPerformed
 
@@ -412,7 +382,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -439,10 +408,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem22;
     private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuItem jMenuPresenciaVesp;
     private javax.swing.JMenuItem jModifFunc;
