@@ -60,6 +60,8 @@ public class ModifFuncionario extends javax.swing.JPanel {
         jLabelLibre2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
 
         setToolTipText("Chofer, Cargador, Mecanico, Supervisor de Trafico, Supervisor de Turno, Supervisor General, Maquinista, Peon, Tractorista, Capataz");
         setLayout(null);
@@ -227,6 +229,19 @@ public class ModifFuncionario extends javax.swing.JPanel {
 
         add(jScrollPane1);
         jScrollPane1.setBounds(10, 322, 1140, 130);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jLabel6.setText("Activo");
+        add(jLabel6);
+        jLabel6.setBounds(260, 40, 50, 20);
+
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        add(jRadioButton1);
+        jRadioButton1.setBounds(310, 40, 21, 21);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonBorraFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorraFuncionarioActionPerformed
@@ -266,7 +281,8 @@ public class ModifFuncionario extends javax.swing.JPanel {
                                Integer.parseInt(jTextBuscaFuncionario.getText().trim()),
                                jComboLibre.getSelectedIndex()+1,
                                Integer.parseInt(jTextChapa.getText().trim()),
-                               operac.normalizaSetTurno(jComboTurno.getSelectedIndex())
+                               operac.normalizaSetTurno(jComboTurno.getSelectedIndex()),
+                               jRadioButton1.isSelected()
                                );
         
     }//GEN-LAST:event_BotonModificaFuncionarioActionPerformed
@@ -291,6 +307,7 @@ public class ModifFuncionario extends javax.swing.JPanel {
                 jComboCategoria.setSelectedItem(jComboCategoria.getItemAt(Integer.parseInt(((String) jTable1.getValueAt(fila, 3)))-1));
                 jComboLibre.setSelectedItem(jComboLibre.getItemAt(Integer.parseInt((String) jTable1.getValueAt(fila, 4))-1));
                 jComboTurno.setSelectedItem(jComboTurno.getItemAt(operac.normalizaGetTurno(Integer.parseInt((String) jTable1.getValueAt(fila, 6)))));
+                jRadioButton1.setSelected(Boolean.parseBoolean((String) jTable1.getValueAt(fila, 7)));
                 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -299,6 +316,16 @@ public class ModifFuncionario extends javax.swing.JPanel {
         
         }
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        boolean pActivo=false;
+        if (jRadioButton1.isSelected()){
+            operac.funcionarioActivo(true);
+        }else{
+            operac.funcionarioActivo(false);
+        }
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BotonBorraFuncionario;
@@ -311,10 +338,12 @@ public class ModifFuncionario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelLibre;
     private javax.swing.JLabel jLabelLibre1;
     private javax.swing.JLabel jLabelLibre2;
+    public javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
     public javax.swing.JTextField jTextApellido;

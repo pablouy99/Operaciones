@@ -286,7 +286,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jModifFuncActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-    
+        this.modFun = new ModifFuncionario();
     if (this.contains(modFun.getLocation())){
        this.remove(modFun);
     }

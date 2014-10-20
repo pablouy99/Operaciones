@@ -32,10 +32,10 @@ public class Operaciones {
     }
     
     public boolean altaFuncionario(String pNombre, String pApellido,
-            int pCat, int pNumFunc, int pLibre, int pConcesion,int pChapa, int pTurno){
+            int pCat, int pNumFunc, int pLibre, int pConcesion,int pChapa, int pTurno, boolean pActivo){
         boolean resultado=false;
         
-        resultado = func.ingresarFunc(pNombre, pApellido, pCat, pNumFunc, pLibre, pConcesion, pChapa, pTurno);
+        resultado = func.ingresarFunc(pNombre, pApellido, pCat, pNumFunc, pLibre, pConcesion, pChapa, pTurno, pActivo);
         
         return resultado;
     }
@@ -50,10 +50,10 @@ public class Operaciones {
     }
     
     public boolean modiFuncionario(String pNombre, String pApellido,
-            int pCat, int pNumFunc, int pLibre, int pChapa, int pTurno){
+            int pCat, int pNumFunc, int pLibre, int pChapa, int pTurno, boolean pActivo){
         boolean resultado=false;
         
-            resultado = func.modiFuncionario(pNombre, pApellido, pCat, pNumFunc, pLibre, pChapa, pTurno);
+            resultado = func.modiFuncionario(pNombre, pApellido, pCat, pNumFunc, pLibre, pChapa, pTurno, pActivo);
         
         return resultado;
     }
@@ -71,7 +71,7 @@ public class Operaciones {
     int i;
     result = func.buscarFuncionarioPorChapa(funcio);
     //if (result.size()>8){
-            for (i=0; i < result.size(); i=i+8){           
+            for (i=0; i < result.size(); i=i+9){           
                clsFuncionario funcionarios = new clsFuncionario();
                funcionarios.setNroFunc(Integer.parseInt(result.get(i).toString()));
                funcionarios.setNombre(result.get(i+1).toString());
@@ -81,15 +81,15 @@ public class Operaciones {
                funcionarios.setConcesion(Integer.parseInt(result.get(i+7).toString()));
                funcionarios.setLibre(Integer.parseInt(result.get(i+4).toString()));
                funcionarios.setTurno(Integer.parseInt(result.get(i+6).toString()));
+               funcionarios.setActivo(normalizaBool(result.get(i+8).toString()));
                variosFunc.add(funcionarios);
                
             }
             return variosFunc;
-    //}else{
-      //  return result;
-    //}
+  }
     
-    
+    public void funcionarioActivo(boolean pActivo){
+        func.setActivo(pActivo);
     }
     
     public String buscarRecorrido(String barrio){
@@ -143,6 +143,15 @@ public int normalizaSetTurno(int turno){
     
     return turno;
 }
+
+ public boolean normalizaBool(String pActivo){
+     boolean resultado=false;
+     if (pActivo.equals("1")){
+       resultado = true;
+    }
+     
+             return resultado;
+ }
 
  public ArrayList listarTurno(int pTurno){
      ArrayList resultado = new ArrayList();

@@ -20,6 +20,7 @@ public class clsFuncionario {
     private int concesion;
     private int turno;
     private int chapa;
+    private boolean activo;
     
     
     pFuncionario funcionario = new pFuncionario();
@@ -31,7 +32,7 @@ public class clsFuncionario {
     }
     
     public boolean ingresarFunc(String pNombre, String pApellido,
-            int pCat, int pNumFunc, int pLibre, int pConcesion, int pChapa, int pTurno){
+            int pCat, int pNumFunc, int pLibre, int pConcesion, int pChapa, int pTurno, boolean pActivo){
            boolean resp = false;
             this.nombre = pNombre;
             this.apellido = pApellido;
@@ -41,6 +42,7 @@ public class clsFuncionario {
             this.concesion = pConcesion;
             this.chapa = pChapa;
             this.turno = pTurno;
+            this.activo = pActivo;
             
             
            resp = funcionario.ingresar(this);
@@ -49,7 +51,7 @@ public class clsFuncionario {
        }
     
     public boolean modiFuncionario(String pNombre, String pApellido,
-            int pCat, int pNumFunc, int pLibre, int pChapa, int pTurno){
+            int pCat, int pNumFunc, int pLibre, int pChapa, int pTurno, boolean pActivo){
            boolean resp = false;
             this.nombre = pNombre;
             this.apellido = pApellido;
@@ -58,7 +60,7 @@ public class clsFuncionario {
             this.libre = pLibre;
             this.chapa = pChapa;
             this.turno = pTurno;
-            
+            this.activo = pActivo;
             
            resp = funcionario.modificar(this);
             
@@ -95,6 +97,10 @@ public class clsFuncionario {
         return concesion;
     }
     
+       public boolean getActivo() {
+        return activo;
+    }
+        
       public void setApellido(String apellido) {
         this.apellido = apellido;
     }
@@ -124,6 +130,11 @@ public class clsFuncionario {
          public void setConcesion(int concesion) {
         this.concesion = concesion;
     }
+         
+    public void setActivo(boolean pActivo) {
+        this.activo = pActivo;
+    }
+            
       
     public boolean bajaFunc(int nroFun){
                

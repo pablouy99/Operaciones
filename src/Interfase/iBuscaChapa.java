@@ -102,6 +102,7 @@ public class iBuscaChapa extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Operaciones op = new Operaciones();
+        //modFun = new ModifFuncionario();
         iBuscar busca = new iBuscar();
         int i=0;
         
@@ -111,9 +112,9 @@ public class iBuscaChapa extends javax.swing.JFrame {
           JOptionPane.showMessageDialog(null,"Funcionario no Existe o num Invalido");
        }else{
                    
-             String[] titulos = {"numeroFuncionario", "Nombre", "Apellido", "Categoria","Libre", "Chapa","Turno"}; 
+             String[] titulos = {"numeroFuncionario", "Nombre", "Apellido", "Categoria","Libre", "Chapa","Turno","Activo"}; 
               model = new DefaultTableModel(null, titulos);
-              String[] fila = new String[7];
+              String[] fila = new String[8];
               clsFuncionario claseFuncionario = new clsFuncionario();
               for (i=0; i<func.size(); i++){
               claseFuncionario = (clsFuncionario) func.get(i);
@@ -125,6 +126,7 @@ public class iBuscaChapa extends javax.swing.JFrame {
               fila[4] = Integer.toString(claseFuncionario.getLibre());
               fila[5] = Integer.toString(claseFuncionario.getChapa());
               fila[6] = Integer.toString(claseFuncionario.getTurno());
+              fila[7] = Boolean.toString(claseFuncionario.getActivo());
                           
               model.addRow(fila);
               }

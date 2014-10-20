@@ -35,7 +35,7 @@ public class pFuncionario extends clsPersistencia{
         boolean resultado = false;
               
        resultado = executeQuery("INSERT INTO funcionario (numeroFunc, nombre, apellido, categoria, libre, concesion, chapa, turno) VALUES ("+ func.getNroFunc() +",'" + func.getNombre() +"','"+ func.getApellido() + "'," +
-                func.getCategoria() + "," + func.getLibre() +","+ func.getConcesion() + "," + func.getChapa() + "," + func.getTurno() +")"); 
+                func.getCategoria() + "," + func.getLibre() +","+ func.getConcesion() + "," + func.getChapa() + "," + func.getTurno() +", 1)"); 
         
         return resultado;
     }
@@ -43,7 +43,7 @@ public class pFuncionario extends clsPersistencia{
     public boolean modificar(clsFuncionario func){
         boolean resultado = false;
               
-       resultado = executeQuery("UPDATE funcionario SET numeroFunc=" + func.getNroFunc() + ", nombre='"+ func.getNombre() +"', apellido='" + func.getApellido()+ "', categoria="+ func.getCategoria() +", libre="+ func.getLibre() +", chapa=" + func.getChapa() + " , turno=" + func.getTurno()+" WHERE numeroFunc="+ func.getNroFunc()); 
+       resultado = executeQuery("UPDATE funcionario SET numeroFunc=" + func.getNroFunc() + ", nombre='"+ func.getNombre() +"', apellido='" + func.getApellido()+ "', categoria="+ func.getCategoria() +", libre="+ func.getLibre() +", chapa=" + func.getChapa() + " , turno=" + func.getTurno()+" , activo=" + func.getActivo() +" WHERE numeroFunc="+ func.getNroFunc()); 
         
         return resultado;
     }
@@ -53,7 +53,7 @@ public class pFuncionario extends clsPersistencia{
           ResultSet rs;
 
         try {
-            rs = selectQuery("SELECT numeroFunc, nombre, apellido, categoria.categoria, libre, chapa, turno FROM funcionario INNER JOIN categoria ON categoria.idcategoria=funcionario.categoria WHERE numeroFunc=" + nroFun + ";");
+            rs = selectQuery("SELECT numeroFunc, nombre, apellido, categoria.categoria, libre, chapa, turno, activo FROM funcionario INNER JOIN categoria ON categoria.idcategoria=funcionario.categoria WHERE numeroFunc=" + nroFun + ";");
             //rs.first();
             
 
@@ -65,6 +65,7 @@ public class pFuncionario extends clsPersistencia{
             userList.add(rs.getString("libre"));
             userList.add(rs.getString("chapa"));
             userList.add(rs.getString("turno"));
+            userList.add(rs.getString("activo"));
        }
        } catch (SQLException e) {
             e.printStackTrace();
@@ -77,7 +78,7 @@ public class pFuncionario extends clsPersistencia{
           ResultSet rs;
 
         try {
-            rs = selectQuery("SELECT numeroFunc, nombre, apellido, categoria, libre, chapa, turno, concesion FROM funcionario WHERE chapa=" + nroFun + ";");
+            rs = selectQuery("SELECT numeroFunc, nombre, apellido, categoria, libre, chapa, turno, concesion, activo FROM funcionario WHERE chapa=" + nroFun + ";");
             //rs.first();
             
 
@@ -90,6 +91,7 @@ public class pFuncionario extends clsPersistencia{
             userList.add(rs.getString("chapa"));
             userList.add(rs.getString("turno"));
             userList.add(rs.getString("concesion"));
+            userList.add(rs.getString("activo"));
        }
        } catch (SQLException e) {
             e.printStackTrace();
@@ -110,7 +112,7 @@ public class pFuncionario extends clsPersistencia{
           ResultSet rs;
 
         try {
-            rs = selectQuery("SELECT chapa, nombre, apellido FROM funcionario WHERE turno=" + pTurno + " ORDER BY chapa ASC;");
+            rs = selectQuery("SELECT chapa, nombre, apellido FROM funcionario WHERE turno=" + pTurno + " AND activo=1 ORDER BY chapa ASC;");
             
             
 

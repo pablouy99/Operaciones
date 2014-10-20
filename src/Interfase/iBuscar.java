@@ -152,6 +152,7 @@ public class iBuscar extends javax.swing.JFrame {
           }
           modFun.jComboCategoria.setSelectedItem((String) func.get(3));
           modFun.jComboTurno.setSelectedItem(modFun.jComboTurno.getItemAt(op.normalizaGetTurno(Integer.parseInt((String) func.get(6)))));
+          modFun.jRadioButton1.setSelected(op.normalizaBool((String) func.get(7)));
           modFun.BotonBorraFuncionario.setEnabled(true);
           modFun.setVisible(true);
           this.dispose();
