@@ -326,12 +326,11 @@ public class Principal extends javax.swing.JFrame {
     private void jMenuPresenciaVespActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPresenciaVespActionPerformed
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	   //get current date time with Date()
-	   Date date = new Date();        
-        
+        Date date = new Date();        
         this.presencia = new JPanelPresencia();
-        this.add(presencia, BorderLayout.CENTER);
+        this.add(presencia,BorderLayout.CENTER);
         presencia.jFechaPesencia.setText(dateFormat.format(date));
-        pack();
+        this.pack();
         presencia.setVisible(true);
         
     }//GEN-LAST:event_jMenuPresenciaVespActionPerformed

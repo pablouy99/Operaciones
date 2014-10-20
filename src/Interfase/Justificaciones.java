@@ -20,7 +20,7 @@ public class Justificaciones extends javax.swing.JFrame {
     public Justificaciones() {
         initComponents();
         groupButton();
-        groupButton1();
+        jComboJustificaciones.setEnabled(false);
     }
 
     /**
@@ -37,15 +37,15 @@ public class Justificaciones extends javax.swing.JFrame {
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jComboBox2 = new javax.swing.JComboBox();
+        jComboMotivos = new javax.swing.JComboBox();
+        jRadioConAviso = new javax.swing.JRadioButton();
+        jRadioSinAviso = new javax.swing.JRadioButton();
+        jRadioDocumentacionSi = new javax.swing.JRadioButton();
+        jRadioDocuemtacionNo = new javax.swing.JRadioButton();
+        jComboJustificaciones = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButtonAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Justificacion de Falta");
@@ -53,25 +53,46 @@ public class Justificaciones extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         jLabel1.setText("Motivo");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Falta", "Franco", "Licencia Anual", "Enfermedad", "Seguro de Paro" }));
+        jComboMotivos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboMotivos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Falta", "Franco", "Licencia Anual", "Enfermedad", "Seguro de Paro" }));
+        jComboMotivos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboMotivosActionPerformed(evt);
+            }
+        });
 
-        jRadioButton1.setText("Con Aviso");
+        jRadioConAviso.setText("Con Aviso");
 
-        jRadioButton2.setText("Sin Aviso");
+        jRadioSinAviso.setText("Sin Aviso");
 
-        jRadioButton3.setText("Anexa Documentacion");
+        jRadioDocumentacionSi.setText("Anexa Documentacion");
+        jRadioDocumentacionSi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioDocumentacionSiActionPerformed(evt);
+            }
+        });
 
-        jRadioButton4.setText("No Anexa Documentacion");
+        jRadioDocuemtacionNo.setText("No Anexa Documentacion");
+        jRadioDocuemtacionNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioDocuemtacionNoActionPerformed(evt);
+            }
+        });
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Paternidad", "Medica", "Fallecimiento", "Citacion Judicial", "Donacion de Sangre", "Sindical", "Estudios", "Otro" }));
+        jComboJustificaciones.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jComboJustificaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Paternidad", "Medica", "Fallecimiento", "Citacion Judicial", "Donacion de Sangre", "Sindical", "Estudios", "Otro" }));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         jLabel2.setText("Justificación:");
 
-        jButton1.setText("Cancelar");
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Aceptar");
+        jButtonAceptar.setText("Aceptar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,13 +102,13 @@ public class Justificaciones extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboMotivos, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -95,16 +116,16 @@ public class Justificaciones extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboJustificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                            .addComponent(jRadioConAviso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioSinAviso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4))
+                            .addComponent(jRadioDocumentacionSi)
+                            .addComponent(jRadioDocuemtacionNo))
                         .addGap(77, 77, 77))))
         );
         layout.setVerticalGroup(
@@ -113,28 +134,53 @@ public class Justificaciones extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboMotivos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton3))
+                    .addComponent(jRadioConAviso)
+                    .addComponent(jRadioDocumentacionSi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton4))
+                    .addComponent(jRadioSinAviso)
+                    .addComponent(jRadioDocuemtacionNo))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboJustificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboMotivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboMotivosActionPerformed
+        if (jComboMotivos.getSelectedIndex()==0){
+            enableButtons();
+        }else
+            disableButtons();
+    }//GEN-LAST:event_jComboMotivosActionPerformed
+
+    private void jRadioDocumentacionSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioDocumentacionSiActionPerformed
+        if (jRadioDocumentacionSi.isSelected()){
+            jComboJustificaciones.setEnabled(true);
+        }
+        
+    }//GEN-LAST:event_jRadioDocumentacionSiActionPerformed
+
+    private void jRadioDocuemtacionNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioDocuemtacionNoActionPerformed
+        if(jRadioDocuemtacionNo.isSelected()){
+            jComboJustificaciones.setEnabled(false);
+        }
+    }//GEN-LAST:event_jRadioDocuemtacionNoActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,21 +216,35 @@ public class Justificaciones extends javax.swing.JFrame {
             }
         });
     }
+    public void disableButtons(){
+        jRadioConAviso.setEnabled(false);
+        jRadioSinAviso.setEnabled(false);
+        jRadioDocumentacionSi.setEnabled(false);
+        jRadioDocuemtacionNo.setEnabled(false);
+    
+    }
+    
+    public void enableButtons(){
+    jRadioConAviso.setEnabled(true);
+            jRadioSinAviso.setEnabled(true);
+            jRadioDocumentacionSi.setEnabled(true);
+            jRadioDocuemtacionNo.setEnabled(true);
+    
+    }
+    
     
     private void groupButton( ) {
 
 ButtonGroup bg1 = new ButtonGroup( );
-
-bg1.add(jRadioButton1);
-bg1.add(jRadioButton2);
-
-}
-private void groupButton1( ) { 
 ButtonGroup bg2 = new ButtonGroup( );
 
-bg2.add(jRadioButton3);
-bg2.add(jRadioButton4);
+bg1.add(jRadioConAviso);
+bg1.add(jRadioSinAviso);
 
+   disableButtons();
+
+bg2.add(jRadioDocumentacionSi);
+bg2.add(jRadioDocuemtacionNo);
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -192,15 +252,15 @@ bg2.add(jRadioButton4);
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JButton jButtonAceptar;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JComboBox jComboJustificaciones;
+    private javax.swing.JComboBox jComboMotivos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioConAviso;
+    private javax.swing.JRadioButton jRadioDocuemtacionNo;
+    private javax.swing.JRadioButton jRadioDocumentacionSi;
+    private javax.swing.JRadioButton jRadioSinAviso;
     // End of variables declaration//GEN-END:variables
 }

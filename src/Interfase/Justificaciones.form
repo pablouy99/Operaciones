@@ -17,7 +17,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -38,14 +38,14 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="79" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jComboBox1" min="-2" pref="117" max="-2" attributes="0"/>
+              <Component id="jComboMotivos" min="-2" pref="145" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="88" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="88" max="-2" attributes="0"/>
+              <Component id="jButtonCancelar" min="-2" pref="97" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButtonAceptar" min="-2" pref="100" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -54,18 +54,18 @@
                   <Group type="102" attributes="0">
                       <Component id="jLabel2" min="-2" pref="79" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboJustificaciones" min="-2" pref="162" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jRadioButton1" max="32767" attributes="0"/>
-                          <Component id="jRadioButton2" max="32767" attributes="0"/>
+                          <Component id="jRadioConAviso" max="32767" attributes="0"/>
+                          <Component id="jRadioSinAviso" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="92" max="32767" attributes="0"/>
+                      <EmptySpace pref="133" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioDocumentacionSi" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioDocuemtacionNo" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   </Group>
@@ -79,27 +79,27 @@
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="jComboMotivos" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioConAviso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioDocumentacionSi" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioSinAviso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioDocuemtacionNo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComboBox2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="jComboJustificaciones" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="jButtonCancelar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="jButtonAceptar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -115,8 +115,11 @@
         <Property name="text" type="java.lang.String" value="Motivo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="jComboMotivos">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="5">
             <StringItem index="0" value="Falta"/>
@@ -127,28 +130,37 @@
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboMotivosActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+    <Component class="javax.swing.JRadioButton" name="jRadioConAviso">
       <Properties>
         <Property name="text" type="java.lang.String" value="Con Aviso"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+    <Component class="javax.swing.JRadioButton" name="jRadioSinAviso">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sin Aviso"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+    <Component class="javax.swing.JRadioButton" name="jRadioDocumentacionSi">
       <Properties>
         <Property name="text" type="java.lang.String" value="Anexa Documentacion"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioDocumentacionSiActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+    <Component class="javax.swing.JRadioButton" name="jRadioDocuemtacionNo">
       <Properties>
         <Property name="text" type="java.lang.String" value="No Anexa Documentacion"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioDocuemtacionNoActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="jComboJustificaciones">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
@@ -175,12 +187,15 @@
         <Property name="text" type="java.lang.String" value="Justificaci&#xf3;n:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jButtonCancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="jButtonAceptar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aceptar"/>
       </Properties>
