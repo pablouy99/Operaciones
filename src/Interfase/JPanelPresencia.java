@@ -23,7 +23,11 @@ import sun.java2d.ScreenUpdateManager;
 public class JPanelPresencia extends javax.swing.JPanel {
     private DefaultTableModel model;
     private Justificaciones justifica;
+    private String[] cosa;
+    private ArrayList borrados = new ArrayList();
+    iCorregir corrige;
     int turno=0;
+    int filaDeLaTabla = 0;
 
     /**
      * Creates new form JPanelPresencia
@@ -54,6 +58,7 @@ public class JPanelPresencia extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jButtonGuardarPresencia = new javax.swing.JButton();
         jButtonGuardarPresencia1 = new javax.swing.JButton();
+        jButtonCorregir = new javax.swing.JButton();
 
         jTablePresencia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,6 +118,14 @@ public class JPanelPresencia extends javax.swing.JPanel {
             }
         });
 
+        jButtonCorregir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonCorregir.setText("Corregir");
+        jButtonCorregir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCorregirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,6 +149,8 @@ public class JPanelPresencia extends javax.swing.JPanel {
                     .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonCorregir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonGuardarPresencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -158,26 +173,32 @@ public class JPanelPresencia extends javax.swing.JPanel {
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonGuardarPresencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonCorregir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+        
     private void jFechaPesenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFechaPesenciaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFechaPesenciaActionPerformed
 
+    public void rellenarTabla(String[] correccion){
+        this.cosa = correccion;
+        this.model.addRow(correccion);
+        this.jTablePresencia.setModel(model);
+    
+    }
+    
     private void jComboTurnoPresenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboTurnoPresenciaActionPerformed
            int i=0;
            Operaciones operac = new Operaciones();
            ArrayList func = new ArrayList();
         
          turno = jComboTurnoPresencia.getSelectedIndex();
-         
-        
-        
+               
         func = operac.listarTurno(operac.normalizaSetTurno(turno));
             String[] titulos = {"Chapa", "Nombre", "Apellido"}; 
               model = new DefaultTableModel(null, titulos){
@@ -203,12 +224,19 @@ public class JPanelPresencia extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboTurnoPresenciaActionPerformed
 
     private void jTablePresenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePresenciaMouseClicked
-        // TODO add your handling code here:
+          String[] DatosDeBorrados = new String[3];
         
-        if (evt.getClickCount() == 2 && !evt.isConsumed()){
-            int fila = jTablePresencia.getSelectedRow();
-         model.removeRow(fila);
-         this.jTablePresencia.setModel(model);
+            if (evt.getClickCount() == 2 && !evt.isConsumed()){
+            this.filaDeLaTabla = jTablePresencia.getSelectedRow();
+            
+            DatosDeBorrados[0] = (String) model.getValueAt(filaDeLaTabla, 0);
+            DatosDeBorrados[1] = (String) model.getValueAt(filaDeLaTabla, 1);
+            DatosDeBorrados[2] = (String) model.getValueAt(filaDeLaTabla, 2);
+            
+            this.borrados.add(DatosDeBorrados);
+            
+            model.removeRow(filaDeLaTabla);
+            this.jTablePresencia.setModel(model);
         }
     }//GEN-LAST:event_jTablePresenciaMouseClicked
 
@@ -217,11 +245,18 @@ public class JPanelPresencia extends javax.swing.JPanel {
         justifica.setVisible(true);
     }//GEN-LAST:event_jButtonGuardarPresencia1ActionPerformed
 
+    private void jButtonCorregirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCorregirActionPerformed
+        this.corrige = new iCorregir(borrados, this);
+        corrige.setLocationRelativeTo(null);
+        corrige.setVisible(true);
+    }//GEN-LAST:event_jButtonCorregirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JButton jButtonCorregir;
     private javax.swing.JButton jButtonGuardarPresencia;
     private javax.swing.JButton jButtonGuardarPresencia1;
     public javax.swing.JComboBox jComboTurnoPresencia;
