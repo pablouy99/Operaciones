@@ -47,7 +47,7 @@ public class Justificaciones extends javax.swing.JFrame {
         jButtonCancelar = new javax.swing.JButton();
         jButtonAceptar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Justificacion de Falta");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
