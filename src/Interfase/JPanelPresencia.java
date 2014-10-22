@@ -14,7 +14,7 @@ import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 import operaciones.Operaciones;
 import operaciones.clsFuncionario;
-import sun.java2d.ScreenUpdateManager;
+
 
 /**
  *
