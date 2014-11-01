@@ -2,12 +2,27 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="47"/>
+	<queryString>
+		<![CDATA[SELECT
+     funcionario.`nombre`,
+     funcionario.`apellido`,
+     funcionario.`numeroFunc`,
+     funcionario.`chapa`,
+     funcionario.`turno`
+FROM
+     `funcionario` funcionario]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<field name="numeroFunc" class="java.lang.Integer"/>
+	<field name="chapa" class="java.lang.Integer"/>
+	<field name="turno" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="193" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="231" height="20"/>
 				<textElement>
@@ -25,7 +40,7 @@
 			<staticText>
 				<reportElement x="68" y="24" width="102" height="20"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[OPERACIONES]]></text>
 			</staticText>
@@ -36,10 +51,134 @@
 				</textElement>
 				<text><![CDATA[R-RRHH-0115 Version: 3  Vigencia:16/03/2011]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="122" y="48" width="147" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DEL HECHO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="447" y="48" width="30" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="447" y="68" width="30" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="477" y="48" width="30" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="507" y="48" width="41" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="477" y="68" width="30" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="507" y="68" width="41" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="397" y="48" width="50" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="397" y="68" width="50" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="399" y="48" width="50" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[DESDE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="68" width="50" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[HASTA:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="90" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="82" y="90" width="466" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="110" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="130" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="150" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="170" width="82" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="90" width="82" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="130" width="82" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CHAPA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="111" width="82" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nº]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="151" width="82" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[TURNO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="171" width="80" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[HORARIO:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="82" y="110" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="82" y="130" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="82" y="150" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="82" y="170" width="82" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement x="84" y="90" width="185" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="13" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre} + "  "+$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="111" width="82" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroFunc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="131" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chapa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="151" width="82" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{turno}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="55" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch"/>
