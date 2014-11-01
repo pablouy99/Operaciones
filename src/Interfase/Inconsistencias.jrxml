@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="514" leftMargin="27" rightMargin="54" topMargin="64" bottomMargin="64">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="47"/>
+	<property name="ireport.y" value="0"/>
 	<queryString>
 		<![CDATA[SELECT
      funcionario.`nombre`,
@@ -22,177 +22,899 @@ FROM
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="193" splitType="Stretch">
+		<band height="353" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="231" height="20"/>
+				<reportElement x="0" y="1" width="213" height="24"/>
 				<textElement>
-					<font size="14" isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CONTROL DE INCONSISTENCIAS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="24" width="63" height="20"/>
+				<reportElement x="0" y="20" width="63" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SECTOR]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="68" y="24" width="102" height="20"/>
+				<reportElement x="68" y="21" width="102" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[OPERACIONES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="487" y="0" width="68" height="44"/>
+				<reportElement x="443" y="1" width="67" height="37"/>
 				<textElement textAlignment="Right">
-					<font size="8"/>
+					<font size="7"/>
 				</textElement>
 				<text><![CDATA[R-RRHH-0115 Version: 3  Vigencia:16/03/2011]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="122" y="48" width="147" height="20"/>
+				<reportElement x="131" y="39" width="147" height="20"/>
 				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
+					<font size="11" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FECHA DEL HECHO]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="447" y="48" width="30" height="20"/>
+				<reportElement x="406" y="37" width="30" height="20"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="447" y="68" width="30" height="20"/>
+				<reportElement x="406" y="57" width="30" height="20"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="477" y="48" width="30" height="20"/>
+				<reportElement x="436" y="37" width="30" height="20"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="507" y="48" width="41" height="20"/>
+				<reportElement x="466" y="37" width="41" height="20"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="477" y="68" width="30" height="20"/>
+				<reportElement x="436" y="57" width="30" height="20"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="507" y="68" width="41" height="20"/>
+				<reportElement x="466" y="57" width="41" height="20"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="397" y="48" width="50" height="20"/>
+				<reportElement x="356" y="37" width="50" height="20"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="397" y="68" width="50" height="20"/>
+				<reportElement x="356" y="57" width="50" height="20"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="399" y="48" width="50" height="20"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<reportElement x="358" y="37" width="50" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
 				<text><![CDATA[DESDE:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="399" y="68" width="50" height="20"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<reportElement x="358" y="57" width="50" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
 				<text><![CDATA[HASTA:]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="0" y="90" width="82" height="20"/>
+				<reportElement x="1" y="78" width="82" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="82" y="90" width="466" height="20"/>
+				<reportElement x="83" y="78" width="424" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="0" y="110" width="82" height="20"/>
+				<reportElement x="1" y="92" width="82" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="0" y="130" width="82" height="20"/>
+				<reportElement x="1" y="106" width="82" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="0" y="150" width="82" height="20"/>
+				<reportElement x="1" y="120" width="82" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="0" y="170" width="82" height="20"/>
+				<reportElement x="1" y="134" width="82" height="14"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="90" width="82" height="20"/>
+				<reportElement x="1" y="78" width="82" height="14"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[NOMBRE:]]></text>
+				<text><![CDATA[Nombre:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="2" y="130" width="82" height="20"/>
+				<reportElement x="3" y="106" width="82" height="14"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[CHAPA:]]></text>
+				<text><![CDATA[Chapa:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="2" y="111" width="82" height="20"/>
+				<reportElement x="3" y="92" width="82" height="14"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[Nº]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="2" y="151" width="82" height="20"/>
+				<reportElement x="3" y="121" width="82" height="14"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[TURNO:]]></text>
+				<text><![CDATA[Turno:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="2" y="171" width="80" height="20"/>
+				<reportElement x="3" y="135" width="80" height="14"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[HORARIO:]]></text>
+				<text><![CDATA[Horario:]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="82" y="110" width="82" height="20"/>
+				<reportElement x="83" y="92" width="82" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="82" y="130" width="82" height="20"/>
+				<reportElement x="83" y="106" width="82" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="82" y="150" width="82" height="20"/>
+				<reportElement x="83" y="120" width="82" height="14"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="82" y="170" width="82" height="20"/>
+				<reportElement x="83" y="134" width="82" height="14"/>
 			</rectangle>
 			<textField>
-				<reportElement x="84" y="90" width="185" height="20"/>
+				<reportElement x="85" y="78" width="185" height="14"/>
 				<textElement verticalAlignment="Middle">
-					<font size="13" isItalic="true"/>
+					<font size="11" isBold="true" isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre} + "  "+$F{apellido}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="82" y="111" width="82" height="20"/>
+				<reportElement x="82" y="93" width="82" height="13"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{numeroFunc}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="84" y="131" width="80" height="20"/>
+				<reportElement x="85" y="105" width="80" height="14"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{chapa}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="82" y="151" width="82" height="20"/>
+				<reportElement x="84" y="121" width="82" height="14"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{turno}]]></textFieldExpression>
 			</textField>
+			<rectangle>
+				<reportElement x="1" y="162" width="509" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="148" width="47" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[FALTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="148" width="101" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[LLEGADA TARDE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="162" width="77" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CON AVISO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="162" width="68" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIN AVISO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="161" width="157" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANEXA DOCUMENTACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="161" width="21" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="489" y="162" width="21" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="178" width="196" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[LA RAZÓN Y LA JUSTIFICACION]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="192" width="96" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="207" width="96" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="222" width="213" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="122" y="192" width="91" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="122" y="207" width="91" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="93" y="192" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="93" y="207" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="213" y="192" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="213" y="207" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="213" y="222" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="348" y="207" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="248" y="207" width="100" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="248" y="192" width="100" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="348" y="192" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="483" y="207" width="29" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="207" width="100" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="383" y="192" width="100" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="483" y="192" width="29" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="192" width="88" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PATERNIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="207" width="88" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FALLECIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="222" width="119" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICADO MEDICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="193" width="88" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTUDIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="207" width="72" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SINDICAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="192" width="88" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALIDA ANTICIPADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="208" width="97" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DONACION DE SANGRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="193" width="97" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CITACION JUDICIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="208" width="97" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OTROS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="3" y="255" width="147" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="255" width="47" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="269" width="147" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="269" width="47" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="150" y="283" width="47" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="283" width="147" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="197" y="283" width="47" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="197" y="255" width="47" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="197" y="269" width="47" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="239" width="168" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[COMPENSACIÓN DE TURNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="239" width="109" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[LLEGADA TARDE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="239" width="117" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[CAMBIO DE TURNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="255" width="88" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE TURNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="269" width="88" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TURNO DE CAMBIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="283" width="88" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORARIO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="405" y="317" width="102" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="299" y="317" width="106" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="405" y="332" width="102" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="299" y="332" width="106" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="299" y="303" width="124" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[SALIDA ANTICIPADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="317" width="85" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="332" width="75" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA SALIDA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="108" y="331" width="89" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="331" width="105" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="108" y="316" width="89" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="316" width="105" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="7" y="316" width="88" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE LIBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="332" width="88" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE FALTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="302" width="168" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[COMPENSACION DE LIBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="64" width="151" height="16"/>
+				<textElement/>
+				<text><![CDATA[DATOS DEL FUNCIONARIO]]></text>
+			</staticText>
 		</band>
 	</title>
-	<pageHeader>
-		<band height="55" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="125" splitType="Stretch"/>
-	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="290" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="106" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[TIEMPO EXTRA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="63" y="21" width="85" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="21" width="63" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="148" y="21" width="74" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="63" y="36" width="85" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="148" y="36" width="74" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="22" width="63" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA EXTRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="21" width="85" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="21" width="75" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA SALIDA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="308" y="19" width="147" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="49" width="47" height="30"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="308" y="49" width="147" height="30"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="313" y="49" width="141" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCANSO INTERMEDIO TRABAJADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="20" width="141" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIA LIBRE TRABAJADO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="455" y="19" width="47" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="308" y="34" width="147" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="34" width="47" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="312" y="34" width="117" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FERIADO TRABAJADO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="191" y="60" width="56" height="17"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="80" width="88" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TURNO DE CAMBIO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="191" y="77" width="56" height="17"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="125" y="60" width="66" height="17"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="1" y="77" width="124" height="17"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="125" y="77" width="66" height="17"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="125" y="94" width="66" height="17"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="6" y="94" width="88" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORARIO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="191" y="94" width="56" height="17"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="1" y="94" width="124" height="17"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="77" width="88" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENTRADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="95" width="88" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="60" width="66" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TURNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="60" width="56" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DESCANSO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="2" y="120" width="505" height="62"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="117" width="146" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUSTIFICACION DEL SUPERVISOR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="160" width="136" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA DEL FUNCIONARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="236" y="162" width="94" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA  SUPERVISOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="162" width="38" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="149" width="146" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[__________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="149" width="146" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[__________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="408" y="149" width="102" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[________/________/____________]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="3" y="199" width="504" height="62"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="14" y="239" width="136" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPERVISOR GENERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="196" width="66" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUSTIFICADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="241" width="94" height="19"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COORDINADOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="228" width="146" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[__________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="228" width="129" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="228" width="98" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[________/________/____________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="447" y="241" width="38" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="179" width="122" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[OPINION DEL JEFE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="241" width="38" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="228" width="129" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[________/________/____________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="58" width="122" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[FALTA  MARCACION]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="36" width="63" height="15"/>
+			</rectangle>
+		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="-26" width="512" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[RECIBIDO RN RRHH POR:_____________________________________________________FECHA:___/____/______]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="2" y="-3" width="68" height="60"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="70" y="-3" width="56" height="30"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="126" y="-3" width="95" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="6" y="-3" width="60" height="59"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXCLUSIVO RRHH]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="70" y="27" width="56" height="30"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="126" y="11" width="95" height="16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="126" y="27" width="32" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="158" y="27" width="31" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="189" y="27" width="32" height="14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="158" y="41" width="31" height="16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="126" y="41" width="32" height="16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="189" y="41" width="32" height="16"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="70" y="-3" width="54" height="32"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAMBIO DE TURNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="29" width="54" height="29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIEMPO EXTRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="-3" width="93" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOCTURNIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="28" width="24" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="29" width="24" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="29" width="24" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="29" width="24" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEN]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="221" y="41" width="32" height="16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="221" y="27" width="32" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="255" y="29" width="24" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEN]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="252" y="41" width="32" height="16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="252" y="27" width="32" height="14"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="223" y="28" width="24" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="28" width="26" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEEN]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
