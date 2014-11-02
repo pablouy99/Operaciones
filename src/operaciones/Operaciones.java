@@ -79,7 +79,11 @@ public class Operaciones {
                funcionarios.setCategoria(Integer.parseInt(result.get(i+3).toString()));
                funcionarios.setChapa(Integer.parseInt(result.get(i+5).toString()));
                funcionarios.setConcesion(Integer.parseInt(result.get(i+7).toString()));
-               funcionarios.setLibre(Integer.parseInt(result.get(i+4).toString()));
+               if (result.get(i+4)== null){
+                        funcionarios.setLibre(7);
+                }else{
+                    funcionarios.setLibre(Integer.parseInt(result.get(i+4).toString()));
+                }
                funcionarios.setTurno(Integer.parseInt(result.get(i+6).toString()));
                funcionarios.setActivo(normalizaBool(result.get(i+8).toString()));
                variosFunc.add(funcionarios);

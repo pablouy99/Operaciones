@@ -59,6 +59,7 @@ public class JPanelPresencia extends javax.swing.JPanel {
         jButtonGuardarPresencia = new javax.swing.JButton();
         jButtonGuardarPresencia1 = new javax.swing.JButton();
         jButtonCorregir = new javax.swing.JButton();
+        jButtonCorregir1 = new javax.swing.JButton();
 
         jTablePresencia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -126,6 +127,14 @@ public class JPanelPresencia extends javax.swing.JPanel {
             }
         });
 
+        jButtonCorregir1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonCorregir1.setText("Cancelar");
+        jButtonCorregir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCorregir1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,9 +160,12 @@ public class JPanelPresencia extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonCorregir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonGuardarPresencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonCorregir1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButtonGuardarPresencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -177,7 +189,9 @@ public class JPanelPresencia extends javax.swing.JPanel {
                     .addComponent(jButtonGuardarPresencia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonGuardarPresencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCorregir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonCorregir1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
         
@@ -251,12 +265,17 @@ public class JPanelPresencia extends javax.swing.JPanel {
         corrige.setVisible(true);
     }//GEN-LAST:event_jButtonCorregirActionPerformed
 
+    private void jButtonCorregir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCorregir1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonCorregir1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton jButtonCorregir;
+    private javax.swing.JButton jButtonCorregir1;
     private javax.swing.JButton jButtonGuardarPresencia;
     private javax.swing.JButton jButtonGuardarPresencia1;
     public javax.swing.JComboBox jComboTurnoPresencia;

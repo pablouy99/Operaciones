@@ -68,8 +68,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuPresenciaVesp = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem23 = new javax.swing.JMenuItem();
+        jMenuIncoNueva = new javax.swing.JMenuItem();
+        jMenuIncoBuscar = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem19 = new javax.swing.JMenuItem();
@@ -176,11 +176,16 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu12.setText("Inconsistencias");
 
-        jMenuItem13.setText("Nueva");
-        jMenu12.add(jMenuItem13);
+        jMenuIncoNueva.setText("Nueva");
+        jMenuIncoNueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuIncoNuevaActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jMenuIncoNueva);
 
-        jMenuItem23.setText("Buscar");
-        jMenu12.add(jMenuItem23);
+        jMenuIncoBuscar.setText("Buscar");
+        jMenu12.add(jMenuIncoBuscar);
 
         jMenu7.add(jMenu12);
 
@@ -335,6 +340,13 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuPresenciaVespActionPerformed
 
+    private void jMenuIncoNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuIncoNuevaActionPerformed
+            jPanelInconsistencia inco = new jPanelInconsistencia();
+            this.add(inco,BorderLayout.CENTER);
+            this.pack();
+            inco.setVisible(true);
+    }//GEN-LAST:event_jMenuIncoNuevaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -392,10 +404,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuIncoBuscar;
+    private javax.swing.JMenuItem jMenuIncoNueva;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
@@ -405,7 +418,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
