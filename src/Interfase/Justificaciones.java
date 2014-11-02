@@ -13,7 +13,8 @@ import javax.swing.ButtonGroup;
  * @author Usuario
  */
 public class Justificaciones extends javax.swing.JFrame {
-
+    String causas="";
+    String ju="";
     /**
      * Creates new form Justificaciones
      */
@@ -22,7 +23,8 @@ public class Justificaciones extends javax.swing.JFrame {
         groupButton();
         jComboJustificaciones.setEnabled(false);
     }
-
+        
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,6 +83,11 @@ public class Justificaciones extends javax.swing.JFrame {
 
         jComboJustificaciones.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboJustificaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Paternidad", "Medica", "Fallecimiento", "Citacion Judicial", "Donacion de Sangre", "Sindical", "Estudios", "Otro" }));
+        jComboJustificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboJustificacionesActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         jLabel2.setText("Justificación:");
@@ -93,6 +100,11 @@ public class Justificaciones extends javax.swing.JFrame {
         });
 
         jButtonAceptar.setText("Aceptar");
+        jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAceptarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,6 +193,27 @@ public class Justificaciones extends javax.swing.JFrame {
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
+        jPanelInconsistencia inco= new jPanelInconsistencia();
+        String ca="", ad="";
+        if (jRadioConAviso.isSelected()){
+            ca = "con aviso";
+            if (jRadioDocumentacionSi.isSelected()){
+                ad = "anexa";
+            }
+        }
+        
+              
+        causas = jComboMotivos.getSelectedItem() +" "+ ca + " " + ad + " " + ju;
+        causas.trim();
+        inco.justificacion = causas;
+        this.dispose();
+    }//GEN-LAST:event_jButtonAceptarActionPerformed
+
+    private void jComboJustificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboJustificacionesActionPerformed
+        ju =(String) jComboJustificaciones.getSelectedItem();
+    }//GEN-LAST:event_jComboJustificacionesActionPerformed
 
     /**
      * @param args the command line arguments
