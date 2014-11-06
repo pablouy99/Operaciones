@@ -77,6 +77,8 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaDescripcion = new javax.swing.JTextArea();
 
+        setPreferredSize(getMaximumSize());
+
         jLabel1.setText("DIA");
 
         jComboBoxCausa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -194,19 +196,6 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 1025, Short.MAX_VALUE)
-                                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -255,7 +244,16 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jTextFieldFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addComponent(jComboBoxJustificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                        .addContainerGap(791, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 696, Short.MAX_VALUE)
+                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,20 +294,42 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxJustificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(140, 140, 140))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
+        setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboBoxCausa, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextFieldFinal, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextFieldInicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextFieldHoraExtra, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboBoxJustificacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jButtonAceptar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jButtonCancelar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextFieldFecha1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jTextChapa, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboBoxDia, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jComboBoxMes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        setLayer(jScrollPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFinalActionPerformed
@@ -325,10 +345,11 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
     }//GEN-LAST:event_jTextFieldHoraExtraActionPerformed
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
-                   
             if (justificacion.isEmpty()){
                  JOptionPane.showMessageDialog(null,"Debe haber una justificacion para las extras");
-            }   
+            }
+           
+                       
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
