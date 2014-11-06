@@ -13,7 +13,7 @@ import operaciones.Operaciones;
  *
  * @author Usuario
  */
-public class iFuncionario extends javax.swing.JPanel {
+public class iFuncionario extends javax.swing.JLayeredPane {
     Operaciones opera = new Operaciones();
     int concesion = 0;
     int turno = 0;

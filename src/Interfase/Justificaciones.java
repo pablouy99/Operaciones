@@ -203,8 +203,7 @@ public class Justificaciones extends javax.swing.JFrame {
                 ad = "anexa";
             }
         }
-        
-              
+                      
         causas = jComboMotivos.getSelectedItem() +" "+ ca + " " + ad + " " + ju;
         causas.trim();
         inco.justificacion = causas;

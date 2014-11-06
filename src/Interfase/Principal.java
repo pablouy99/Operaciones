@@ -12,12 +12,11 @@ import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-
 /**
  *
  * @author Usuario
  */
-public class Principal extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame{
     private iFuncionario iFun;
     private ModifFuncionario modFun;
     private JPanelPresencia presencia;
@@ -26,6 +25,7 @@ public class Principal extends javax.swing.JFrame {
     ArrayList func = new ArrayList();
     public JTable table;
     public DefaultTableModel model;
+   
     
     /**
      * Creates new form Principal
@@ -53,8 +53,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jPanel1 = new javax.swing.JPanel();
         jMenuItem22 = new javax.swing.JMenuItem();
+        jPanel1 = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -105,7 +105,6 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestión de Operaciones");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setIconImages(null);
         setName("Operaciones"); // NOI18N
         getContentPane().setLayout(null);
 
@@ -261,7 +260,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-           this.dispose();
+           //this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -281,7 +280,7 @@ public class Principal extends javax.swing.JFrame {
     private void jModifFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModifFuncActionPerformed
         // TODO add your handling code here:
        try{
-      this.modFun = new ModifFuncionario();
+      modFun = new ModifFuncionario();
       this.add(modFun);
       modFun.setVisible(false);
       this.iBusca = new iBuscar(modFun);
@@ -300,6 +299,7 @@ public class Principal extends javax.swing.JFrame {
       modFun.setVisible(false);
       this.iBusca = new iBuscar(modFun);
       iBusca.setVisible(true);
+     
              
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
@@ -319,6 +319,7 @@ public class Principal extends javax.swing.JFrame {
             modFun.setVisible(false);
             this.iBuscaChapa = new iBuscaChapa(modFun);
             iBuscaChapa.setVisible(true);
+            iBuscaChapa.toFront();
        }catch(Exception e){
        
        }        
@@ -337,23 +338,23 @@ public class Principal extends javax.swing.JFrame {
         presencia.jFechaPesencia.setText(dateFormat.format(date));
         this.pack();
         presencia.setVisible(true);
-        
+              
     }//GEN-LAST:event_jMenuPresenciaVespActionPerformed
 
     private void jMenuIncoNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuIncoNuevaActionPerformed
             jPanelInconsistencia inco = new jPanelInconsistencia();
-            this.add(inco,BorderLayout.CENTER);
+            this.add(inco);
             this.pack();
             inco.setVisible(true);
+            
     }//GEN-LAST:event_jMenuIncoNuevaActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /*
-         * Set the Nimbus look and feel
-         */
+        
+            
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /*
          * If Nimbus (introduced in Java SE 6) is not available, stay with the
@@ -377,12 +378,10 @@ public class Principal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /*
+       /*
          * Create and display the form
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 new Principal().setVisible(true);
             }

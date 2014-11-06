@@ -19,7 +19,7 @@ import operaciones.clsFuncionario;
  *
  * @author Usuario
  */
-public class jPanelInconsistencia extends javax.swing.JPanel {
+public class jPanelInconsistencia extends javax.swing.JLayeredPane {
    MaskFormatter mask15, mask11, mask12, mask14;
    Calendar localCalendar = Calendar.getInstance(TimeZone.getDefault());
    public String justificacion;
@@ -37,8 +37,7 @@ public class jPanelInconsistencia extends javax.swing.JPanel {
      */
     public jPanelInconsistencia() {
         initComponents();
-        
-        
+             
     }
 
     /**
@@ -277,11 +276,12 @@ public class jPanelInconsistencia extends javax.swing.JPanel {
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBoxDia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxMes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxMes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jComboBoxDia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -290,9 +290,8 @@ public class jPanelInconsistencia extends javax.swing.JPanel {
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jTextFieldFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldHoraExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jTextFieldHoraExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -383,37 +382,42 @@ public class jPanelInconsistencia extends javax.swing.JPanel {
         if(horaFinal.isEmpty() || horaInicial.isEmpty()){
           JOptionPane.showMessageDialog(null,"La hora de Inicio y/o fin no pueden estar vacías");
         }else{
-         horaFin = Integer.parseInt(horaFinal.substring(0,2));
-         minFin = Integer.parseInt(horaFinal.substring(3,5));
+            try {
+                horaFin = Integer.parseInt(horaFinal.substring(0,2).trim());
+                minFin = Integer.parseInt(horaFinal.substring(3,5).trim());
+                horaInicio = Integer.parseInt(horaInicial.substring(0,2).trim());
+                minInicio = Integer.parseInt(horaInicial.substring(3,5).trim());
          
-         horaInicio = Integer.parseInt(horaInicial.substring(0,2));
-         minInicio = Integer.parseInt(horaInicial.substring(3,5));
-         
-        horas = horaFin - horaInicio;
-        minutos = minFin - minInicio;
+                horas = horaFin - horaInicio;
+                minutos = minFin - minInicio;
         
-        if(horas < 0){
-            horas += 24;
-        }
+             if(horas < 0){
+                    horas += 24;
+             }
             
-        if (minutos < 15){
-            minutos = 0;
-            }else{
-                if (minutos < 30){
-                minutos = 15;
-                }else{
-                    if (minutos < 45){
-                    minutos = 30;
+                if (minutos < 15){
+                    minutos = 0;
+                 }else{
+                    if (minutos < 30){
+                        minutos = 15;
                     }else{
-                        if (minutos < 60){
-                        minutos = 45;
+                        if (minutos < 45){
+                            minutos = 30;
+                        }else{
+                            if (minutos < 60){
+                                minutos = 45;
+                            }
                         }
                     }
-                }
-            };    
-        
-        
-        jTextFieldHoraExtra.setText(horas + ":" + minutos);
+                };    
+            jTextFieldHoraExtra.setText(horas + ":" + minutos); 
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Hubo un error en el formato de las horas");
+                jTextFieldInicio.grabFocus();
+            }
+  
+            
+         
         }
     }//GEN-LAST:event_jTextFieldFinalFocusLost
 

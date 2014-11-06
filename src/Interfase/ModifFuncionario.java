@@ -13,14 +13,14 @@ import operaciones.Operaciones;
  *
  * @author Usuario
  */
-public class ModifFuncionario extends javax.swing.JPanel {
-    Operaciones operac = new Operaciones();
+public class ModifFuncionario extends javax.swing.JLayeredPane{
+       Operaciones operac = new Operaciones();
     /**this.setExtendedState(Principal.MAXIMIZED_BOTH); 
      * Creates new form ModifFuncionario
      */
     public ModifFuncionario() {
       initComponents();
-        
+      
     }
     /**
      * This method is called from within the constructor to initialize the form.
