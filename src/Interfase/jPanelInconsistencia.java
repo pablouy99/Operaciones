@@ -410,7 +410,11 @@ public class jPanelInconsistencia extends javax.swing.JLayeredPane {
                         }
                     }
                 };    
-            jTextFieldHoraExtra.setText(horas + ":" + minutos); 
+                if (minutos == 0){
+                      jTextFieldHoraExtra.setText(horas + ":00" );    
+                }else{
+                    jTextFieldHoraExtra.setText(horas + ":" + minutos); 
+                }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,"Hubo un error en el formato de las horas");
                 jTextFieldInicio.grabFocus();

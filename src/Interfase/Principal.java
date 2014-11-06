@@ -32,9 +32,11 @@ public class Principal extends javax.swing.JFrame{
      */
     public Principal() {
         initComponents();
+        Fondo f = new Fondo();
+        this.add(f);
         this.setLayout(new BorderLayout());
         this.setExtendedState(Principal.MAXIMIZED_BOTH);   
-        
+        this.pack();
     }
 
     /**
@@ -268,34 +270,35 @@ public class Principal extends javax.swing.JFrame{
        try{
           this.remove(modFun);
        }catch(Exception e){
+       
        }
        this.iFun = new iFuncionario();
-       
-       this.add(iFun);
+       this.add(iFun, 0);
        pack();
        iFun.setVisible(true);
-        
+     
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jModifFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModifFuncActionPerformed
         // TODO add your handling code here:
        try{
-      modFun = new ModifFuncionario();
-      this.add(modFun);
-      modFun.setVisible(false);
-      this.iBusca = new iBuscar(modFun);
-      iBusca.setVisible(true);
+            modFun = new ModifFuncionario();
+            this.add(modFun, 0);
+            modFun.setVisible(false);
+            this.iBusca = new iBuscar(modFun);
+            iBusca.setVisible(true);
        }catch(Exception e){
        }
     }//GEN-LAST:event_jModifFuncActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         this.modFun = new ModifFuncionario();
+    
     if (this.contains(modFun.getLocation())){
        this.remove(modFun);
     }
       this.modFun = new ModifFuncionario();
-      this.add(modFun);
+      this.add(modFun, 0);
       modFun.setVisible(false);
       this.iBusca = new iBuscar(modFun);
       iBusca.setVisible(true);
@@ -312,10 +315,10 @@ public class Principal extends javax.swing.JFrame{
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-    // Esto inicia el 
+    
         try{
             this.modFun = new ModifFuncionario();
-            this.add(modFun);
+            this.add(modFun, 0);
             modFun.setVisible(false);
             this.iBuscaChapa = new iBuscaChapa(modFun);
             iBuscaChapa.setVisible(true);
@@ -334,7 +337,7 @@ public class Principal extends javax.swing.JFrame{
 	   //get current date time with Date()
         Date date = new Date();        
         this.presencia = new JPanelPresencia();
-        this.add(presencia,BorderLayout.CENTER);
+        this.add(presencia, 0);
         presencia.jFechaPesencia.setText(dateFormat.format(date));
         this.pack();
         presencia.setVisible(true);
@@ -343,9 +346,11 @@ public class Principal extends javax.swing.JFrame{
 
     private void jMenuIncoNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuIncoNuevaActionPerformed
             jPanelInconsistencia inco = new jPanelInconsistencia();
-            this.add(inco);
+            this.add(inco, 0);
             this.pack();
+            
             inco.setVisible(true);
+            
             
     }//GEN-LAST:event_jMenuIncoNuevaActionPerformed
 
