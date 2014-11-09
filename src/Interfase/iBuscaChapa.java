@@ -106,54 +106,39 @@ public class iBuscaChapa extends javax.swing.JFrame {
         iBuscar busca = new iBuscar();
         int i=0;
         
-        this.func = op.buscarFuncionarioPorChapa(Integer.parseInt(jTextBusca.getText().trim()));
+        if (jTextBusca.getText().trim().isEmpty()){
+             JOptionPane.showMessageDialog(null,"El cuadro de Busqueda no debe quedar vacío");
+            jTextBusca.requestFocus();
+        }else{
+            this.func = op.buscarFuncionarioPorChapa(Integer.parseInt(jTextBusca.getText().trim()));
        
-       if (func.isEmpty()){
-          JOptionPane.showMessageDialog(null,"Funcionario no Existe o num Invalido");
-       }else{
+            if (func.isEmpty()){
+                JOptionPane.showMessageDialog(null,"Funcionario no Existe o num Invalido");
+            }else{
                    
-             String[] titulos = {"numeroFuncionario", "Nombre", "Apellido", "Categoria","Libre", "Chapa","Turno","Activo"}; 
-              model = new DefaultTableModel(null, titulos);
-              String[] fila = new String[8];
-              clsFuncionario claseFuncionario = new clsFuncionario();
-              for (i=0; i<func.size(); i++){
-              claseFuncionario = (clsFuncionario) func.get(i);
+                    String[] titulos = {"numeroFuncionario", "Nombre", "Apellido", "Categoria","Libre", "Chapa","Turno","Activo"}; 
+                    model = new DefaultTableModel(null, titulos);
+                    String[] fila = new String[8];
+                    clsFuncionario claseFuncionario = new clsFuncionario();
+                for (i=0; i<func.size(); i++){
+                    claseFuncionario = (clsFuncionario) func.get(i);
               
-              fila[0] = Integer.toString(claseFuncionario.getNroFunc());
-              fila[1] = claseFuncionario.getNombre();
-              fila[2] = claseFuncionario.getApellido();
-              fila[3] = Integer.toString(claseFuncionario.getCategoria());
-              fila[4] = Integer.toString(claseFuncionario.getLibre());
-              fila[5] = Integer.toString(claseFuncionario.getChapa());
-              fila[6] = Integer.toString(claseFuncionario.getTurno());
-              fila[7] = Boolean.toString(claseFuncionario.getActivo());
+                    fila[0] = Integer.toString(claseFuncionario.getNroFunc());
+                    fila[1] = claseFuncionario.getNombre();
+                    fila[2] = claseFuncionario.getApellido();
+                    fila[3] = Integer.toString(claseFuncionario.getCategoria());
+                    fila[4] = Integer.toString(claseFuncionario.getLibre());
+                    fila[5] = Integer.toString(claseFuncionario.getChapa());
+                    fila[6] = Integer.toString(claseFuncionario.getTurno());
+                    fila[7] = Boolean.toString(claseFuncionario.getActivo());
                           
-              model.addRow(fila);
-              }
-              modFun.setVisible(true);
-              modFun.jTable1.setModel(model);
+                    model.addRow(fila);
+            }
+                  modFun.setVisible(true);
+                  modFun.jTable1.setModel(model);
               this.dispose();
-          
-              
-         /*     
-          modFun.jTextBuscaFuncionario.setText((String) func.get(0));
-          modFun.jTextNombre.setText((String) func.get(1));
-          modFun.jTextApellido.setText((String) func.get(2)); 
-          modFun.jComboCategoria.setSelectedItem((String) func.get(3));
-                    
-          if (func.get(4)==null){
-                modFun.jComboLibre.setSelectedItem(modFun.jComboLibre.getItemAt(0));
-          }else{
-              modFun.jComboLibre.setSelectedItem(modFun.jComboLibre.getItemAt(Integer.parseInt((String) func.get(4))-1)); 
-          }
-          
-          modFun.jTextChapa.setText((String) func.get(5));
-          modFun.jComboTurno.setSelectedItem(modFun.jComboTurno.getItemAt(op.normalizaTurno(Integer.parseInt((String)func.get(6)))));
-          modFun.BotonBorraFuncionario.setEnabled(true);
-          modFun.jTextBuscaFuncionario.setEnabled(false);
-          modFun.setVisible(true);
-          this.dispose();
-          */
+        }
+        
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 

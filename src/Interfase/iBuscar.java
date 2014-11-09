@@ -134,22 +134,28 @@ public class iBuscar extends javax.swing.JFrame {
     private void BotonBuscarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarFuncionarioActionPerformed
          modFun.jTable1.setVisible(false);
          Operaciones op = new Operaciones();
+         
+    if (jTextBusca.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null,"El cuadro de Busqueda no debe quedar vacío");
+         jTextBusca.requestFocus();
+    }else{
          this.func = op.buscarFuncionario(Integer.parseInt(jTextBusca.getText().trim()));
+    
        
-       if (func.isEmpty()){
+        if (func.isEmpty()){
           JOptionPane.showMessageDialog(null,"Funcionario no Existe o num Invalido");
           jTextBusca.setText("");
-       }else{
+        }else{
           modFun.jTextBuscaFuncionario.setText((String) func.get(0));
           modFun.jTextNombre.setText((String) func.get(1));
           modFun.jTextApellido.setText((String) func.get(2)); 
           modFun.jTextChapa.setText((String) func.get(5));
           
-          if (func.get(4)==null){
+        if (func.get(4)==null){
                 modFun.jComboLibre.setSelectedItem(modFun.jComboLibre.getItemAt(0));
-          }else{
+        }else{
               modFun.jComboLibre.setSelectedItem(modFun.jComboLibre.getItemAt(Integer.parseInt((String) func.get(4))-1)); 
-          }
+        }
           modFun.jComboCategoria.setSelectedItem((String) func.get(3));
           modFun.jComboTurno.setSelectedItem(modFun.jComboTurno.getItemAt(op.normalizaGetTurno(Integer.parseInt((String) func.get(6)))));
           modFun.jRadioButton1.setSelected(op.normalizaBool((String) func.get(7)));
@@ -157,6 +163,7 @@ public class iBuscar extends javax.swing.JFrame {
           modFun.setVisible(true);
           this.dispose();
        }
+    }
     }//GEN-LAST:event_BotonBuscarFuncionarioActionPerformed
 
     private void jTextBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextBuscaActionPerformed
