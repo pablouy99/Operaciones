@@ -22,7 +22,7 @@ public class Fondo extends javax.swing.JPanel {
 
     public void paintComponent(Graphics g){
     Dimension tam = getSize();
-    ImageIcon ImagenFondo = new ImageIcon(new ImageIcon(getClass().getResource("cantera.jpg")).getImage());
+    ImageIcon ImagenFondo = new ImageIcon(new ImageIcon(getClass().getResource("ecotecno.png")).getImage());
     g.drawImage(ImagenFondo.getImage(),0,0,tam.width, tam.height, null);
     setOpaque(false);
     super.paintComponent(g);

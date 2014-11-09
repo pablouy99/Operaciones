@@ -105,7 +105,7 @@ public class Principal extends javax.swing.JFrame{
         jMenuItem22.setText("jMenuItem22");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Gestión de Operaciones");
+        setTitle("Gestión de Operaciones.");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("Operaciones"); // NOI18N
         getContentPane().setLayout(null);
@@ -262,7 +262,7 @@ public class Principal extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCerrarActionPerformed
-           //this.dispose();
+           this.dispose();
     }//GEN-LAST:event_jMenuCerrarActionPerformed
 
     private void jMenuNuevoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNuevoFuncionarioActionPerformed
