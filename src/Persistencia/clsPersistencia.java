@@ -11,7 +11,7 @@ public class clsPersistencia {
 
 	public static String usuarioMySQL = "root";
 	public static String passwordMySQL = "jupiter24";
-	public static String conexionMySQL = "jdbc:mysql://192.210.137.118:3306/operaciones";
+	public static String conexionMySQL = "jdbc:mysql://198.144.180.217:3306/operaciones";
 	/***
 	 * Consultas a la DB 
 	 * @param consulta: Es la consulta que se le en             viará a la base de datos
